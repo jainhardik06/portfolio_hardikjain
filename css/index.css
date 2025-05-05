@@ -1,0 +1,1011 @@
+:root {
+    /* The Gradient */
+    --my-gradient: linear-gradient(to top left, rgb(38, 79, 224), rgb(237, 52, 120), rgb(252, 187, 66));
+  
+    /* --- Add these individual colors --- */
+    --theme-blue: rgb(38, 79, 224);
+    --theme-pink: rgb(237, 52, 120);
+    --theme-orange: rgb(252, 187, 66);
+  
+    /* Optional: Define text colors for good contrast */
+    --text-light: #f8f9fa;
+    --text-dark: #212529;
+
+    
+
+        /* A dark color for the overlay (adjust opacity/color as needed) */
+        --dark-overlay-color: rgba(0, 0, 0, 0.76); /* Dark purple, mostly opaque */
+}
+
+body {
+    background-color: black;
+    padding: 20px 70px 0 70px;
+    font-family: "PT Sans", sans-serif;
+    /* background-image: url('https://yasshhh-portfolio.netlify.app/static/media/banner-bg.cc1273af450504afe755.png'); */
+}
+
+.main {
+    /* padding: 5vh 10vh 0 10vh; */
+}
+
+.header {
+
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 25px;
+}
+
+
+
+/* From Uiverse.io by TISEPSE */ 
+.btn2 {
+    position: relative;
+    /* display: inline-block; */
+    padding: 15px 30px;
+    border: 2px solid #fefefe;
+    text-transform: uppercase;
+    color: #fefefe;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s;
+  }
+  
+  .btn2::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - -2px);
+    background-color: #000;
+    transition: 0.3s ease-out;
+    transform: scaleY(1);
+  }
+  
+  .btn2::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - 50px);
+    background-color: #000;
+    transition: 0.3s ease-out;
+    transform: scaleY(1);
+  }
+  
+  .btn2:hover::before {
+    transform: translateY(-25px);
+    height: 0;
+  }
+  
+  .btn2:hover::after {
+    transform: scaleX(0);
+    transition-delay: 0.15s;
+  }
+  
+  .btn2:hover {
+    border: 2px solid #fefefe;
+  }
+  
+  .btn2 span {
+    position: relative;
+    z-index: 3;
+  }
+  
+  button {
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+  }
+
+  /* From Uiverse.io by Pradeepsaranbishnoi */ 
+  .social-links {
+    gap: 25px;
+  }
+
+  .social-links,.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .social-btn {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    font-family: 'Titillium Web', sans-serif;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    background: white;
+    margin: 5px;
+    transition: 0.3s;
+    justify-content: center;
+  }
+  
+  .social-btn svg {
+    height: 24px;
+    width: 24px;
+  }
+
+  .social-btn img {
+    height: 24px;
+    width: 24px;
+  }
+  
+  .social-btn span {
+    width: 0px;
+    overflow: hidden;
+    transition: 0.3s;
+    text-align: center;
+    margin-left: 5px;
+  }
+  
+  .social-btn:hover {
+    width: 180px;
+    border-radius: 5px;
+  }
+  
+  .social-btn:hover span {
+    padding: 2px;
+    width: 100px;
+  }
+  
+  #twitter svg {
+    fill: #1da1f2;
+  }
+  
+  #linkedin svg {
+    fill: #0e76a8;
+  }
+  
+  #github {
+    fill: #333;
+  }
+  
+  /* From Uiverse.io by marcelodolza */ 
+.connect {
+    --primary: #ff5569;
+    --neutral-1: #f7f8f7;
+    --neutral-2: #e7e7e7;
+    --radius: 14px;
+  
+    cursor: pointer;
+    margin-left: 20px;
+    padding: 20px 0 20px 0;
+    border-radius: var(--radius);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    border: none;
+    box-shadow: 0 0.5px 0.5px 1px rgba(255, 255, 255, 0.2),
+      0 10px 20px rgba(0, 0, 0, 0.2), 0 4px 5px 0px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    padding: 20px;
+    height: 68px;
+    font-family: "Galano Grotesque", Poppins, Montserrat, sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .connect:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 1px 2px rgba(255, 255, 255, 0.3),
+      0 15px 30px rgba(0, 0, 0, 0.3), 0 10px 3px -3px rgba(0, 0, 0, 0.04);
+  }
+  .connect:active {
+    transform: scale(1);
+    box-shadow: 0 0 1px 2px rgba(255, 255, 255, 0.3),
+      0 10px 3px -3px rgba(0, 0, 0, 0.2);
+  }
+  .connect:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    border: 2.5px solid transparent;
+    background: linear-gradient(var(--neutral-1), var(--neutral-2)) padding-box,
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.45))
+        border-box;
+    z-index: 0;
+    transition: all 0.4s ease;
+  }
+  .connect:hover::after {
+    transform: scale(1.05, 1.1);
+    box-shadow: inset 0 -1px 3px 0 rgba(255, 255, 255, 1);
+  }
+  .connect::before {
+    content: "";
+    inset: 7px 6px 6px 6px;
+    position: absolute;
+    background: linear-gradient(to top, var(--neutral-1), var(--neutral-2));
+    border-radius: 30px;
+    filter: blur(0.5px);
+    z-index: 2;
+  }
+  .state p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .state .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: scale(1.25);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .state .icon svg {
+    overflow: visible;
+  }
+  
+  /* Outline */
+  .outline {
+    position: absolute;
+    border-radius: inherit;
+    overflow: hidden;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    inset: -2px -3.5px;
+  }
+  .outline::before {
+    content: "";
+    position: absolute;
+    inset: -100%;
+    background: conic-gradient(
+      from 180deg,
+      transparent 60%,
+      white 80%,
+      transparent 100%
+    );
+    animation: spin 2s linear infinite;
+    animation-play-state: paused;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .connect:hover .outline {
+    opacity: 1;
+  }
+  .connect:hover .outline::before {
+    animation-play-state: running;
+  }
+  
+  /* Letters */
+  .state p span {
+    display: block;
+    opacity: 0;
+    animation: slideDown 0.8s ease forwards calc(var(--i) * 0.03s);
+  }
+  .connect:hover p span {
+    opacity: 1;
+    animation: wave 0.5s ease forwards calc(var(--i) * 0.02s);
+  }
+  .connect:focus p span {
+    opacity: 1;
+    animation: disapear 0.6s ease forwards calc(var(--i) * 0.03s);
+  }
+  @keyframes wave {
+    30% {
+      opacity: 1;
+      transform: translateY(4px) translateX(0) rotate(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-3px) translateX(0) rotate(0);
+      color: var(--primary);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) translateX(0) rotate(0);
+    }
+  }
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px) translateX(5px) rotate(-90deg);
+      color: var(--primary);
+      filter: blur(5px);
+    }
+    30% {
+      opacity: 1;
+      transform: translateY(4px) translateX(0) rotate(0);
+      filter: blur(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-3px) translateX(0) rotate(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) translateX(0) rotate(0);
+    }
+  }
+  @keyframes disapear {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      transform: translateX(5px) translateY(20px);
+      color: var(--primary);
+      filter: blur(5px);
+    }
+  }
+  
+  /* Plane */
+  .state--default .icon svg {
+    animation: land 0.6s ease forwards;
+  }
+  .connect:hover .state--default .icon {
+    transform: rotate(45deg) scale(1.25);
+  }
+  .connect:focus .state--default svg {
+    animation: takeOff 0.8s linear forwards;
+  }
+  .connect:focus .state--default .icon {
+    transform: rotate(0) scale(1.25);
+  }
+  @keyframes takeOff {
+    0% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(70px) rotate(45deg) scale(2);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(160px) rotate(45deg) scale(0);
+    }
+  }
+  @keyframes land {
+    0% {
+      transform: translateX(-60px) translateY(30px) rotate(-50deg) scale(2);
+      opacity: 0;
+      filter: blur(3px);
+    }
+    100% {
+      transform: translateX(0) translateY(0) rotate(0);
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+  
+  /* Contrail */
+  .state--default .icon:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    width: 0;
+    left: -5px;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.5));
+  }
+  .connect:focus .state--default .icon:before {
+    animation: contrail 0.8s linear forwards;
+  }
+  @keyframes contrail {
+    0% {
+      width: 0;
+      opacity: 1;
+    }
+    8% {
+      width: 15px;
+    }
+    60% {
+      opacity: 0.7;
+      width: 80px;
+    }
+    100% {
+      opacity: 0;
+      width: 160px;
+    }
+  }
+  
+  /* States */
+  .state {
+    padding-left: 29px;
+    z-index: 2;
+    display: flex;
+    position: relative;
+  }
+  .state--default span:nth-child(4) {
+    margin-right: 5px;
+  }
+  .state--sent {
+    display: none;
+  }
+  .state--sent svg {
+    transform: scale(1.25);
+    margin-right: 8px;
+  }
+  .connect:focus .state--default {
+    position: absolute;
+  }
+  .connect:focus .state--sent {
+    display: flex;
+  }
+  .connect:focus .state--sent span {
+    opacity: 0;
+    animation: slideDown 0.8s ease forwards calc(var(--i) * 0.2s);
+  }
+  .connect:focus .state--sent .icon svg {
+    opacity: 0;
+    animation: appear 1.2s ease forwards 0.8s;
+  }
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      transform: scale(4) rotate(-40deg);
+      color: var(--primary);
+      filter: blur(4px);
+    }
+    30% {
+      opacity: 1;
+      transform: scale(0.6);
+      filter: blur(1px);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .image-preview {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin-top: 100px;
+    width: 250px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: rgb(38, 88, 224);
+    background-image: linear-gradient(to top left, rgb(38, 79, 224) , rgb(237, 52, 120) , rgb(252, 187, 66));
+    border: #f7f8f7 2px solid;
+    padding: 8px 10px;
+  }
+
+.image-preview h3 {
+    margin-top: -1px;
+    color: #fefefe;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.name h1 {
+    margin-top: 20px;
+    color: #fefefe;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 65px;
+}
+
+.typing-slider {
+    
+    /* Optional: Set a height to prevent layout shifts */
+    /* min-height: 80px; Adjust as needed */
+    position: relative; /* Useful if you need absolute positioning inside */
+}
+
+.typing-slider h1 {
+    margin-top: -20px;
+    color: #717070;
+    font-size: 55px;
+    font-weight: 700;
+    white-space: nowrap;   /* Keep text on one line */
+    overflow: hidden;      /* Hide text until revealed by width */
+    border-right: 5px solid transparent; /* Start with transparent cursor */
+    width: 0;              /* Start with zero width */
+    display: none;         /* Hide all h1 initially */
+    /* Ensure elements occupy the same space if needed */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+}
+
+/* Class added by JS to the active h1 */
+.typing-slider h1.typing {
+    display: inline-block; /* Or block, make it visible */
+    width: auto; /* Let width be determined by animation */
+    border-right-color: #f7f8f7; /* Cursor color */
+    /* Apply animations only when .typing class is present */
+    animation: typewriter var(--type-duration) steps(var(--type-steps)) forwards,
+               blink 800ms steps(1) infinite; /* Use simplified steps(1) for blink */
+}
+
+
+/* Typewriter animation: Animates width from 0 to 100% of the element's content */
+@keyframes typewriter {
+    from {
+        width: 0%;
+    }
+    to {
+        /* Animate to the full width required by the text content */
+        width: 70%;
+    }
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+     /* Blinks the border color */
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+.description {
+    width: 600px;
+    margin-top: 20px;
+    color: rgb(184, 184, 184);
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.bbody {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.animated-astronaut img {
+    width: 550px;
+    height: auto;
+    margin-top: 50px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Define the keyframes for the floating effect */
+@keyframes float {
+    0% {
+      /* Start position - no vertical shift */
+      transform: translateY(0px);
+    }
+    50% {
+      /* Mid-point - float slightly upwards */
+      /* Adjust the -20px value to make it float higher or lower */
+      transform: translateY(-20px);
+    }
+    100% {
+      /* End position - back to the start for a smooth loop */
+      transform: translateY(0px);
+    }
+  }
+  
+  /* Apply the animation to the astronaut image */
+  .animated-astronaut img {
+    width: 550px;     /* Your desired width */
+    height: auto;       /* Maintain aspect ratio */
+    margin-top: 50px; /* Your desired margin */
+  
+    /* Apply the float animation */
+    animation-name: float;             /* Use the keyframes defined above */
+    animation-duration: 4s;          /* How long one cycle takes (adjust for speed) */
+    animation-timing-function: ease-in-out; /* Makes movement smooth */
+    animation-iteration-count: infinite; /* Loop the animation forever */
+  
+    /* You can also use the shorthand: */
+    /* animation: float 4s ease-in-out infinite; */
+  }
+  
+  /* Optional: Add styles to the container if needed */
+  .animated-astronaut {
+    /* Example: Center the astronaut horizontally */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* Add some padding or height to see the full float */
+    /* padding-top: 30px; */
+    /* padding-bottom: 30px; */
+  }
+
+  .c-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 36px;
+    border: 4px solid transparent; /* Keep border transparent initially */
+    font-size: 16px;
+    background-color: transparent; /* Make initial background transparent */
+    border-radius: 10px;
+    font-weight: 600;
+    color: white; /* Use theme pink for initial text color */
+    /* Use theme pink for initial outline shadow */
+    box-shadow: 0 0 0 2px white;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .c-button svg {
+    position: absolute;
+    width: 24px;
+    fill: white; /* Use theme pink for initial SVG fill */
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .c-button .arr-1 {
+    right: 16px;
+  }
+  
+  .c-button .arr-2 {
+    left: -25%;
+  }
+  
+  .c-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    /* Apply the full gradient to the circle */
+    background: var(--my-gradient);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 0; /* Ensure circle is behind text/icons */
+  }
+  
+  .c-button .text {
+    position: relative;
+    z-index: 1; /* Ensure text is above circle */
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .c-button:hover {
+    /* Keep the outer shadow transparent on hover, the circle provides the background */
+    box-shadow: 0 0 0 12px transparent;
+    /* Use the predefined dark color for text on hover (contrasts with gradient) */
+    color: white;
+    border-radius: 12px; /* Keep the border-radius change */
+  }
+  
+  .c-button:hover .arr-1 {
+    right: -25%;
+  }
+  
+  .c-button:hover .arr-2 {
+    left: 16px;
+  }
+  
+  .c-button:hover .text {
+    transform: translateX(12px);
+  }
+  
+  .c-button:hover svg {
+    /* Use the predefined dark color for SVG on hover (contrasts with gradient) */
+    fill: white;
+  }
+  
+  .c-button:active {
+    scale: 0.95;
+    /* Use theme orange for the active state shadow (stands out) */
+    box-shadow: 0 0 0 4px var(--theme-pink);
+  }
+  
+  .c-button:hover .circle {
+    width: 220px; /* Or slightly larger if needed to cover the button */
+    height: 220px;/* Or slightly larger if needed to cover the button */
+    opacity: 1;
+  }
+
+
+
+  .user-color-glow {
+    z-index: -1;
+    margin: -400px 0 0 -100px !important;
+    width: 1700px; /* Or specific dimensions */
+    height: 500px; /* Example height */
+    padding: 30px; /* Add padding for content */
+    box-sizing: border-box; /* Include padding in width/height */
+    color: var(--text-light); /* Light text color for contrast */
+    position: relative; /* Useful if adding absolute elements inside */
+    overflow: hidden; /* Prevents glows spilling out if needed */
+    /* 1. Set the base background TO YOUR GRADIENT */
+    background: var(--my-gradient);
+  
+    /* 2. Layer transparent-to-dark radial gradients ON TOP to hide the center */
+    /*    The base gradient (from step 1) acts as the final background layer */
+    background-image:
+       /* Overlay 1: Transparent at bottom-left, dark towards center/top-right */
+       radial-gradient(
+         ellipse 80% 90% at bottom left,  /* Shape, size, position */
+         transparent 0%,                  /* Start transparent at the corner */
+         transparent 30%,                 /* Stay transparent for a bit */
+         var(--dark-overlay-color) 90%   /* Fade to dark overlay color towards edge */
+       ),
+       /* Overlay 2: Transparent at top-right, dark towards center/bottom-left */
+       radial-gradient(
+         ellipse 80% 90% at top right,   /* Shape, size, position */
+         transparent 0%,                  /* Start transparent at the corner */
+         transparent 30%,                 /* Stay transparent for a bit */
+         var(--dark-overlay-color) 90%   /* Fade to dark overlay color towards edge */
+       ),
+       /* IMPORTANT: Include the original gradient again here if ONLY using
+          background-image. If you set 'background' first like in step 1,
+          you might not need this, but it ensures it's the bottom layer.
+          Test with and without this line depending on browser behavior. */
+       var(--my-gradient);
+  
+  
+    /* Ensure gradients cover the area */
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* Setting background-position might help align if needed, but cover often suffices */
+    /* background-position: center center; */
+  }
+
+.skills-container {
+    margin: 0 auto;
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    background-color: #151515;
+    margin-top: 80px;
+    width: 1300px;
+    height: 550px;
+    z-index: 100;
+    border-radius: 70px;
+}
+
+.skills-container h1 {
+    margin-top: 50px; /* Add spacing above h1 */
+    color: #fefefe;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 45px;
+    margin-bottom: 10px; /* Add spacing between h1 and p */
+    text-align: center; /* Ensure text is centered */
+}
+
+.skills-container p {
+    width: 1000px;
+    margin-top: 20px; /* Remove default margin */
+    margin-bottom: 50px; /* Add spacing below p */
+    color: rgb(184, 184, 184);
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    text-align: center; /* Ensure text is centered */
+}
+
+/* --- Keep existing styles for: --- */
+/* body, progress-svg, progress-track, progress-bar (stroke-dasharray/offset logic), progress-text positioning */
+
+/* --- Updated Base Card and Container Styles --- */
+
+.progress-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px; /* Vertical padding, reduced horizontal */
+    box-sizing: border-box;
+    /* Calculated width below based on 1000px wrapper goal */
+    width: 290px; /* Target width per card */
+    flex-shrink: 0;
+    background-color: #252525; /* Optional: subtle card background */
+    border-radius: 8px;      /* Optional: rounded corners for cards */
+    /* Add transition for potential hover effects */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional: Add a subtle hover effect to cards */
+.progress-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.progress-container {
+    position: relative;
+    /* Make circle slightly larger */
+    width: 180px;
+    height: 180px;
+    margin-bottom: 15px; /* Space between circle and label */
+}
+
+/* SVG styles remain largely the same - ensure radius 'r' is still 45 in HTML */
+.progress-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.progress-track,
+.progress-bar {
+    /* You might want slightly thicker stroke for larger circle */
+    stroke-width: 12;
+    stroke-linecap: round;
+    /* Circumference for r=45: 2 * PI * 45 ≈ 282.74 */
+    stroke-dasharray: 282.74;
+    stroke-dashoffset: 282.74; /* Start empty (JS sets actual progress) */
+    transition: stroke-dashoffset 0.6s ease-out;
+}
+
+.progress-track {
+    stroke: #444; /* Slightly lighter track */
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    /* Slightly larger font for bigger circle */
+    font-size: 2.4em;
+    font-weight: bold;
+}
+
+.progress-label {
+    color: #cccccc;
+    font-size: 1.1em; /* Slightly larger label */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px; /* Adjust spacing if needed */
+}
+
+
+
+.skills-carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+    /* Set the target overall width */
+    max-width: 1000px;
+}
+
+.skills-carousel {
+    overflow: hidden;
+    /* Calculation:
+       Target Wrapper: 1000px
+       Arrows: 45px * 2 = 90px
+       Margins around carousel: 10px * 2 = 20px
+       Available for carousel viewport = 1000 - 90 - 20 = 890px
+    */
+    width: 890px;
+    margin: 0 10px; /* Keep space for arrows */
+}
+
+.skills-track {
+    display: flex;
+    /* Calculation for card width based on carousel viewport:
+       Viewport Width: 890px
+       Visible Cards: 3
+       Gaps between visible cards: 2
+       Let gap = 25px (slightly more space)
+       Total gap width = 25px * 2 = 50px
+       Width available for 3 cards = 890px - 50px = 840px
+       Width per card = 840px / 3 = 280px.
+       Let's refine slightly: Make card width 290px.
+       New required viewport width = (290 * 3) + (25 * 2) = 870 + 50 = 920px
+       New required wrapper width = 920 + 90 (arrows) + 20 (margins) = 1030px.
+       This is close enough to 1000px. Let's adjust based on this.
+    */
+    gap: 25px; /* Increase gap slightly */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* --- REVISED Calculation Based on Card Width 290px & Gap 25px --- */
+.skills-carousel {
+    width: 920px; /* (290 * 3) + (25 * 2) */
+}
+.skills-carousel-wrapper {
+    max-width: 1130px; /* 920 + (45 * 2 arrows) + (10 * 2 margins) */
+}
+/* Individual card width is set above in .progress-card: width: 290px; */
+
+.carousel-arrow img {
+    height: 30px;
+    width: 30px; 
+}
+.carousel-arrow {
+    
+    /* background-color: #555; */
+    color: #fff;
+    border: none;
+    padding: 0; /* Remove padding, rely on width/height */
+    height: 500px;
+    width: 500px; /* Adjusted for larger arrows */
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+    height: 50px; /* Slightly larger arrows */
+    width: 50px;  /* Slightly larger arrows */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1; /* Ensure icon is centered vertically */
+}
+
+.carousel-arrow:hover {
+    background-color: #777;
+    transform: scale(1.1); /* Add subtle scale on hover */
+}
+
+.carousel-arrow:disabled {
+    background-color: #333;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: scale(1); /* Disable hover scale when disabled */
+}
+
+/* Ensure arrows are positioned correctly */
+.carousel-arrow.left-arrow {
+   margin-right: 5px;
+}
+.carousel-arrow.right-arrow {
+   margin-left: 5px; 
+}
+
+.projects-container h1{
+    margin-top: 50px; /* Add spacing above h1 */
+    color: #fefefe;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 45px;
+    margin-bottom: 10px; /* Add spacing between h1 and p */
+    text-align: center; /* Ensure text is centered */
+}
+
+.projects-container p {
+    width: 700px;
+    margin-top: 20px; /* Remove default margin */
+    margin-bottom: 50px; /* Add spacing below p */
+    color: rgb(184, 184, 184);
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    text-align: center !important; /* Ensure text is centered */
+}
