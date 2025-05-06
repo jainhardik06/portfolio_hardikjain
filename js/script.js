@@ -326,3 +326,86 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("All scripts initialized.");
 
 }); // --- End of the single DOMContentLoaded listener ---
+
+document.addEventListener('DOMContentLoaded', () => {
+    const tabsContainer = document.querySelector('.filter-tabs');
+    const buttons = tabsContainer.querySelectorAll('.tab-button');
+    const slider = tabsContainer.querySelector('.slider');
+    const containerPadding = 6; // Must match the CSS padding of .filter-tabs
+
+    // Function to set the slider position and width
+    function moveSlider(targetButton) {
+        const targetRect = targetButton.getBoundingClientRect();
+        const containerRect = tabsContainer.getBoundingClientRect();
+
+        // Calculate position relative to the container, accounting for padding
+        const newLeft = targetRect.left - containerRect.left;
+        const newWidth = targetRect.width;
+
+        slider.style.width = `${newWidth}px`;
+        // We use transform for smoother animation than changing 'left'
+        slider.style.transform = `translateX(${newLeft}px)`;
+
+        // Update active class
+        buttons.forEach(btn => btn.classList.remove('active'));
+        targetButton.classList.add('active');
+    }
+
+    // Initialize slider position to the default active button
+    const initiallyActiveButton = tabsContainer.querySelector('.tab-button.active');
+    if (initiallyActiveButton) {
+        // Use a small delay or requestAnimationFrame to ensure layout is calculated
+        requestAnimationFrame(() => {
+             // Set initial width without animation
+             const initialRect = initiallyActiveButton.getBoundingClientRect();
+             const containerRect = tabsContainer.getBoundingClientRect();
+             slider.style.transition = 'none'; // Disable transition for initial set
+             slider.style.width = `${initialRect.width}px`;
+             slider.style.transform = `translateX(${initialRect.left - containerRect.left}px)`;
+
+             // Re-enable transition after a tiny delay
+             setTimeout(() => {
+                slider.style.transition = 'transform 0.35s cubic-bezier(0.65, 0, 0.35, 1), width 0.35s cubic-bezier(0.65, 0, 0.35, 1)';
+             }, 50);
+        });
+
+    } else {
+         console.warn("No default active button found!");
+         // Optionally set to the first button if none is active
+         if (buttons.length > 0) {
+            requestAnimationFrame(() => moveSlider(buttons[0]));
+         }
+    }
+
+
+    // Add click event listeners to buttons
+    buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            // Only move if the clicked button isn't already active
+            if (!e.currentTarget.classList.contains('active')) {
+                moveSlider(e.currentTarget);
+                 // --- Add your filtering logic here ---
+                 console.log(`Filter selected: ${e.currentTarget.textContent}`);
+                 // Example: filterItems(e.currentTarget.textContent);
+            }
+        });
+    });
+
+     // Optional: Recalculate on resize if needed (e.g., if font size changes)
+     let resizeTimer;
+     window.addEventListener('resize', () => {
+         clearTimeout(resizeTimer);
+         resizeTimer = setTimeout(() => {
+             const currentActiveButton = tabsContainer.querySelector('.tab-button.active');
+             if (currentActiveButton) {
+                 // Temporarily disable transition for resize update
+                 const originalTransition = slider.style.transition;
+                 slider.style.transition = 'none';
+                 moveSlider(currentActiveButton);
+                 // Restore transition after slight delay
+                 setTimeout(() => slider.style.transition = originalTransition, 50);
+             }
+         }, 100); // Debounce resize event
+     });
+
+});

@@ -21,6 +21,7 @@ body {
     background-color: black;
     padding: 20px 70px 0 70px;
     font-family: "PT Sans", sans-serif;
+    overflow-x: hidden;
     /* background-image: url('https://yasshhh-portfolio.netlify.app/static/media/banner-bg.cc1273af450504afe755.png'); */
 }
 
@@ -735,10 +736,10 @@ body {
 
   .user-color-glow {
     z-index: -1;
-    margin: -400px 0 0 -100px !important;
-    width: 1700px; /* Or specific dimensions */
+    margin: -400px 0 0 -75px !important;
+    width: 95rem ;
     height: 500px; /* Example height */
-    padding: 30px; /* Add padding for content */
+    /* padding: 30px; Add padding for content */
     box-sizing: border-box; /* Include padding in width/height */
     color: var(--text-light); /* Light text color for contrast */
     position: relative; /* Useful if adding absolute elements inside */
@@ -998,8 +999,16 @@ body {
     text-align: center; /* Ensure text is centered */
 }
 
-.projects-container p {
-    width: 700px;
+.project-para {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack items vertically */
+
+}
+
+.project-para p {
+    width: 600px;
     margin-top: 20px; /* Remove default margin */
     margin-bottom: 50px; /* Add spacing below p */
     color: rgb(184, 184, 184);
@@ -1008,4 +1017,178 @@ body {
     font-style: normal;
     font-size: 18px;
     text-align: center !important; /* Ensure text is centered */
+}
+
+.filter-tabs-container {
+    /* Just for centering, you might place .filter-tabs directly */
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
+.filter-tabs {
+    position: relative; /* Needed for absolute positioning of the slider */
+    display: inline-flex; /* Use inline-flex to wrap tightly around buttons */
+    align-items: center;
+    background-color: #333; /* Dark grey bar background */
+    padding: 10px; /* Space between edge and buttons/slider */
+    border-radius: 50px; /* Fully rounded ends */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.tab-button.active {
+    color: #fff; /* Active text color */
+    font-weight: 600;
+}
+
+/* style.css */
+
+/* ... (keep other styles the same) ... */
+
+.tab-button {
+    position: relative; /* To ensure text is above the slider */
+    z-index: 1; /* Text above slider */
+
+    /* --- Add Flexbox for centering --- */
+    display: inline-flex; /* Use flex to control alignment *inside* the button */
+    align-items: center;  /* Vertically center text */
+    justify-content: center; /* Horizontally center text (optional but good practice) */
+    /* --- End Flexbox additions --- */
+
+    min-height: 30px; /* Add a minimum height to ensure consistent vertical space */
+    padding: 0 25px; /*Adjust padding: remove vertical, keep horizontal */
+    /* Note: Vertical padding removed as align-items handles vertical centering */
+
+    border: none;
+    background-color: transparent; /* Buttons are see-through */
+    color: #aaa; /* Default text color (inactive) */
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent text wrapping */
+    transition: color 0.3s ease;
+    user-select: none; /* Prevent text selection */
+    outline: none; /* Remove default browser outline */
+}
+
+/* ... (keep slider and other styles the same) ... */
+
+/* --- Ensure Slider Height Matches Button Height --- */
+/* Adjust slider positioning if needed based on the new button layout */
+.projects-grid {
+    padding-top: 50px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.slider {
+    position: absolute;
+    top: 6px;    /* Match container padding */
+    bottom: 6px; /* Match container padding */
+    left: 6px;   /* Initial left position (will be overridden by JS) */
+    /* Calculate height based on container height minus padding */
+    height: calc(100% - 12px); /* Explicitly set height based on container padding */
+    border-radius: 45px; /* Slightly smaller radius than container */
+    background-image: linear-gradient(to top left, rgb(38, 79, 224), rgb(237, 52, 120), rgb(252, 187, 66));
+    transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1), width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+    z-index: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* From Uiverse.io by 1osm */ 
+.card {
+    width: 400px;
+    height: 330px;
+    background: rgb(38, 38, 38);
+    box-shadow: 7px 5px 10px rgba(0, 0, 0, 0.333);
+    border-radius: 20px;
+  }
+  
+  .imge {
+    border-radius: 20px 20px 0px 0px;
+    height: 75px;
+    background-image: linear-gradient(to top left, rgb(38, 79, 224), rgb(237, 52, 120), rgb(252, 187, 66));
+  }
+  
+  .imge .Usericon img {
+    background-color: #fff;
+    transform: translateX(10px) translateY(10px);
+    padding: 2px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+  }
+  
+  .imge .UserName  {
+    /* background-color: #414141; */
+    width: max-content;
+    margin: 0 0 0 10px;
+    /* height: 15px; */
+    border-width: 10px;
+    border-radius: 5px;
+    border-color: #262626;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    transform: translateX(70px) translateY(-35px);
+  }
+  
+  .imge .Id {
+    background-color: #414141;
+    width: 100px;
+    height: 15px;
+    border-width: 10px;
+    border-radius: 5px;
+    border-color: #262626;
+    color: #262626;
+    font-size: 15px;
+    font-weight: bold;
+    transform: translateX(70px) translateY(-25px);
+  }
+  
+  .Description {
+    display: flex;
+    justify-content: space-evenly;
+    border-color: #141414;
+    /* background-color: #414141; */
+    transform: translate(5px, 6px);
+    width: 400px;
+    height: 200px;
+  }
+
+  .Description img {
+    width: 95%;
+    height: 100%;
+    border-radius: 5px;
+    margin-left: -11px;
+
+  }
+
+  .social-media {
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Add space between the icons */
+    margin-top: 10px; /* Optional: Add some spacing above the icons */
+}
+
+.social-media a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color from parent */
+}
+
+.social-media a svg {
+    color: #fff;
+    margin-top: 7px;
+    width: 30px; /* Adjust size of the icons */
+    height: 30px;
+    fill: currentColor; /* Use current text color */
+    transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.social-media a:hover svg {
+    transform: scale(1.2); /* Slightly enlarge icon on hover */
 }
