@@ -59,7 +59,7 @@ body {
     border: 2px solid #fefefe;
     text-transform: uppercase;
     color: #fefefe;
-    text-decoration: none;
+    text-decoration: none ;
     font-weight: 600;
     font-size: 15px;
     transition: 0.3s;
@@ -144,12 +144,20 @@ body {
     width: 24px;
   }
 
+  .social-btn {
+    text-decoration: none !important;
+}
+a {
+    text-decoration: none !important;
+}
+
   .social-btn img {
     height: 24px;
     width: 24px;
   }
   
   .social-btn span {
+    text-decoration: none;
     width: 0px;
     overflow: hidden;
     transition: 0.3s;
